@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Random;
+
 public class QuickSort {
 
   public void swap(int[] arr, int a, int b) {
@@ -17,7 +19,10 @@ public class QuickSort {
   }
 
   public int findPivotIndex(int[] arr, int start, int end) {
-    int pivotIndex = end;
+//    int pivotIndex = end;
+    Random rand= new Random();
+    int pivotIndex = rand.nextInt(end-start)+ start;
+
     int ptrIndex = start;
     for (int i = start; i < end; i++) {
       if (compare(arr[i], arr[pivotIndex], "desc")) {
