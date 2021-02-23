@@ -105,7 +105,8 @@ class Vertex<T> {
     }
 
     public String toString() {
-        return "(" + String.valueOf(id) + ", " + data.toString() + ")";
+//        return "(" + String.valueOf(id) + ", " + data.toString() + ")";
+        return data.toString();
     }
 
     public List<Vertex<T>> getAdjacentVertexes() {

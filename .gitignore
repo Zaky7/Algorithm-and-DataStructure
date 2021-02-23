@@ -31,3 +31,5 @@ out/
 
 # compiled class
 *.class
+
+node_modules

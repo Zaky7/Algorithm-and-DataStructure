@@ -1,0 +1,33 @@
+{
+  "name": "Algorithm-and-DataStructure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaky7/Algorithm-and-DataStructure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zaky7/Algorithm-and-DataStructure/issues"
+  },
+  "homepage": "https://github.com/Zaky7/Algorithm-and-DataStructure#readme",
+  "devDependencies": {
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,css,scss,md,html,java}": "prettier --write"
+  }
+}
