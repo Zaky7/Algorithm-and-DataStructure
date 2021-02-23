@@ -19,9 +19,9 @@ public class QuickSort {
   }
 
   public int findPivotIndex(int[] arr, int start, int end) {
-//    int pivotIndex = end;
-    Random rand= new Random();
-    int pivotIndex = rand.nextInt(end-start)+ start;
+    //    int pivotIndex = end;
+    Random rand = new Random();
+    int pivotIndex = rand.nextInt(end - start) + start;
 
     int ptrIndex = start;
     for (int i = start; i < end; i++) {

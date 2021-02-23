@@ -5,6 +5,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTree<E extends Comparable<E>> {
+
   private Node<E> root;
   private int size = 0;
 

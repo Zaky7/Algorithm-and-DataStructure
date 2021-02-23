@@ -3,6 +3,7 @@ package heap;
 import java.util.Arrays;
 
 public class MinIntHeap {
+
   private int capacity = 20;
   private int size = 0;
   int[] items;

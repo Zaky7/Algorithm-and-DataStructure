@@ -17,7 +17,11 @@ public class pizzaSlices {
         }
 
         if (C - pizzaArray[R - 1] >= 0) {
-          dp[R][C] = Math.max(dp[R - 1][C], dp[R - 1][C - pizzaArray[R - 1]] + pizzaArray[R - 1]);
+          dp[R][C] =
+            Math.max(
+              dp[R - 1][C],
+              dp[R - 1][C - pizzaArray[R - 1]] + pizzaArray[R - 1]
+            );
         } else {
           dp[R][C] = dp[R - 1][C];
         }

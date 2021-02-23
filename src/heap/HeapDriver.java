@@ -2,44 +2,41 @@ package heap;
 
 public class HeapDriver {
 
-	public static void main(String[] args) {
-		HeapDriver driver = new HeapDriver();
-		driver.heapDriver2();
+  public static void main(String[] args) {
+    HeapDriver driver = new HeapDriver();
+    driver.heapDriver2();
+  }
 
-	}
+  private void heapDriver2() {
+    MaxIntHeap2 mh = new MaxIntHeap2(10);
+    int[] arr = { 100, 20, 1, 8, 14, 56, 6, 0, 20 };
+    print(mh.getCapacity());
 
-	private void heapDriver2() {
-		MaxIntHeap2 mh = new MaxIntHeap2(10);
-		int[] arr = { 100, 20, 1, 8, 14, 56, 6, 0, 20 };
-		print(mh.getCapacity());
+    for (int element : arr) mh.add(element);
 
-		for (int element : arr)
-			mh.add(element);
+    mh.printHeap();
 
-		mh.printHeap();
+    mh.poll();
+    mh.poll();
 
-		mh.poll();
-		mh.poll();
+    mh.printHeap();
+  }
 
-		mh.printHeap();
-	}
+  private void heapDriver1() {
+    MaxIntHeap mh = new MaxIntHeap(10);
+    int[] arr = { 100, 20, 1, 8, 14, 56, 6, 0, 20 };
+    print(mh.getCapacity());
 
-	private void heapDriver1() {
-		MaxIntHeap mh = new MaxIntHeap(10);
-		int[] arr = { 100, 20, 1, 8, 14, 56, 6, 0, 20 };
-		print(mh.getCapacity());
+    for (int element : arr) mh.add(element);
 
-		for (int element : arr)
-			mh.add(element);
+    mh.printHeap();
 
-		mh.printHeap();
+    mh.poll();
+    // mh.poll();
+    mh.printHeap();
+  }
 
-		mh.poll();
-		// mh.poll();
-		mh.printHeap();
-	}
-
-	public static void print(Object o) {
-		System.out.println(o.toString());
-	}
+  public static void print(Object o) {
+    System.out.println(o.toString());
+  }
 }

@@ -9,7 +9,10 @@ public class MedianOfSortedArrays {
     for (int partitionX = 1; partitionX < M; partitionX++) {
       int partitionY = greaterElementIndex(arr2, arr1[partitionX - 1]);
 
-      if (arr1[partitionX - 1] < arr2[partitionY] && arr1[partitionX] > arr2[partitionY - 1]) {
+      if (
+        arr1[partitionX - 1] < arr2[partitionY] &&
+        arr1[partitionX] > arr2[partitionY - 1]
+      ) {
         if ((N + M) % 2 != 0) {
           median =
             (
@@ -33,7 +36,14 @@ public class MedianOfSortedArrays {
     int midIndex = (start + end) / 2;
 
     System.out.println(
-      "Start: " + start + " End: " + end + " Target: " + target + " Mid: " + midIndex
+      "Start: " +
+      start +
+      " End: " +
+      end +
+      " Target: " +
+      target +
+      " Mid: " +
+      midIndex
     );
 
     if (arr[midIndex] > target) {

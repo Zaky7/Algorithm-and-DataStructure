@@ -3,6 +3,7 @@ package heap;
 import java.util.Arrays;
 
 public class MaxIntHeap {
+
   private int capacity = 20;
   private int size = 0;
   int[] items;
@@ -10,7 +11,7 @@ public class MaxIntHeap {
   MaxIntHeap(int capacity) {
     this.capacity = capacity;
     this.items = new int[capacity];
-//    Arrays.fill(this.items, -1);
+    //    Arrays.fill(this.items, -1);
   }
 
   private int getLeftChildIndex(int parentIndex) {
@@ -92,7 +93,7 @@ public class MaxIntHeap {
     items[0] = items[size - 1];
 
     // Mark place as empty
-//    items[size - 1] = -1;
+    //    items[size - 1] = -1;
     size--;
     heapifyDown();
     return item;

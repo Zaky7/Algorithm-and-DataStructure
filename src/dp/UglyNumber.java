@@ -2,7 +2,6 @@ package dp;
 
 import java.security.InvalidParameterException;
 
-
 public class UglyNumber {
 
   /*
@@ -34,7 +33,9 @@ public class UglyNumber {
           candidate_ugly_num++;
           if (isUgly(candidate_ugly_num)) {
             ithNum++;
-            System.out.println("Ith: " + ithNum + " candidateNum: " + candidate_ugly_num);
+            System.out.println(
+              "Ith: " + ithNum + " candidateNum: " + candidate_ugly_num
+            );
           }
         }
         return candidate_ugly_num;
@@ -79,7 +80,10 @@ public class UglyNumber {
 
     for (int i = 1; i < n; i++) {
       next_ugly_number =
-        Math.min(next_multiple_of_2, Math.min(next_multiple_of_3, next_multiple_of_5));
+        Math.min(
+          next_multiple_of_2,
+          Math.min(next_multiple_of_3, next_multiple_of_5)
+        );
 
       ugly[i] = next_ugly_number;
       if (next_ugly_number == next_multiple_of_2) {

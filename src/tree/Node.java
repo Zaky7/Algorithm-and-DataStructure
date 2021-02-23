@@ -1,6 +1,7 @@
 package tree;
 
 public class Node<T> {
+
   /* Left child, right child and data */
   public Node<T> left;
   public Node<T> right;

@@ -14,9 +14,11 @@ public class TopKSortWord {
     PriorityQueue<Map.Entry<String, Integer>> maxHeap = new PriorityQueue<>(
       words.length,
       new Comparator<Map.Entry<String, Integer>>() {
-
         @Override
-        public int compare(Map.Entry<String, Integer> m1, Map.Entry<String, Integer> m2) {
+        public int compare(
+          Map.Entry<String, Integer> m1,
+          Map.Entry<String, Integer> m2
+        ) {
           int valueCompareDesc = m2.getValue().compareTo(m1.getValue());
           int nameCompareAsc = m1.getKey().compareTo(m2.getKey());
 
@@ -61,11 +63,19 @@ public class TopKSortWord {
   }
 
   public static void main(String[] args) {
-    String[] list = { "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is" };
+    String[] list = {
+      "day",
+      "is",
+      "sunny",
+      "the",
+      "the",
+      "the",
+      "sunny",
+      "is",
+      "is",
+    };
     int k = 4;
     List<String> words = new TopKSortWord().topKFrequent(list, k);
     System.out.println(words);
-    
-    
   }
 }
