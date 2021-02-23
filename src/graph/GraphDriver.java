@@ -1,21 +1,25 @@
 package graph;
 
-import java.util.LinkedList;
-
 public class GraphDriver {
 
     public static void main(String[] args) {
             int V = 4;
-    	    Graph g = new Graph(V);
+    	    Graph g = new Graph(true);
 
-            g.addEdge(0, 3);
-            g.addEdge(1, 0);
-//            g.addEdge(3, 3);
+    	    Vertex A = new Vertex(1, "A");
+            Vertex B = new Vertex(2, "B");
+    	    Vertex C = new Vertex(3, "C");
+    	    Vertex D = new Vertex(4, "D");
 
-            g.addEdge(2, 0);
 
-            boolean edgeExist = g.isCyclic();
-            System.out.println("Edge exist: " + edgeExist);
+            g.addEdge(A,C);
+            g.addEdge(B, C);
+            g.addEdge(B, D);
+            g.addEdge(C, D);
+
+
+            System.out.println(g.toString());
+
     }
 
 }
