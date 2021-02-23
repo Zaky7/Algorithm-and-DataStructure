@@ -73,7 +73,7 @@ public class Graph<T> {
 }
 
 class Vertex<T> {
-    long id;
+    private long id;
     private T data;
     private final List<Edge<T>> edges = new ArrayList<>();
     private List<Vertex<T>> adjacentVertex = new ArrayList<>();
