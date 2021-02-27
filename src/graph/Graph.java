@@ -83,6 +83,8 @@ class Vertex<T> {
   private final List<Edge<T>> edges = new ArrayList<>();
   private List<Vertex<T>> adjacentVertex = new ArrayList<>();
 
+  private int minEdgeWeight = Integer.MAX_VALUE;
+
   Vertex(long id) {
     this.id = id;
   }
@@ -140,6 +142,14 @@ class Vertex<T> {
     int result = 1;
     result = prime * result + (int) (id ^ (id >>> 32));
     return result;
+  }
+
+  public int getMinEdgeWeight() {
+    return minEdgeWeight;
+  }
+
+  public void setMinEdgeWeight(int minEdgeWeight) {
+    this.minEdgeWeight = minEdgeWeight;
   }
 }
 

@@ -3,38 +3,28 @@ package heap;
 public class HeapDriver {
 
   public static void main(String[] args) {
-    HeapDriver driver = new HeapDriver();
-    driver.heapDriver3();
-  }
+    //    HeapDriver driver = new HeapDriver();
+    //    driver.heapDriver2();
 
-  private void heapDriver3() {
-    MinIntHeap2 mh = new MinIntHeap2(14);
-    int[] arr = { 100, 20, 1, 8, 14, 56, 6, 0, 21, 34, 5, 6, 23, 13, 22 };
-    print(mh.getCapacity());
+    BinaryMinHeap<String> binaryHeap = new BinaryMinHeap<>();
 
-    for (int element : arr) mh.add(element);
+    binaryHeap.add(10, "A");
+    binaryHeap.add(1, "B");
+    binaryHeap.add(5, "C");
+    binaryHeap.add(6, "D");
 
-    mh.printHeap();
+    binaryHeap.printBinaryHeap();
 
-    while (mh.heapSize != 0) {
-      mh.poll();
-      mh.printHeap();
-    }
-  }
+    System.out.println(binaryHeap.containsKey("C"));
+    System.out.println(binaryHeap.containsKey("F"));
 
-  private void heapDriver2() {
-    MaxIntHeap2 mh = new MaxIntHeap2(10);
-    int[] arr = { 100, 20, 1, 8, 14, 56, 6, 0, 21, 34, 5, 6, 23, 13, 22 };
-    print(mh.getCapacity());
+    binaryHeap.decrease("A", 2);
 
-    for (int element : arr) mh.add(element);
+    binaryHeap.printBinaryHeap();
 
-    mh.printHeap();
+    binaryHeap.poll();
 
-    while (mh.heapSize != 0) {
-      mh.poll();
-      mh.printHeap();
-    }
+    binaryHeap.printBinaryHeap();
   }
 
   private void heapDriver1() {
