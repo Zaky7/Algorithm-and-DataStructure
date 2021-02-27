@@ -167,8 +167,7 @@ class Edge<T> {
    * @param weight
    */
   Edge(Vertex<T> vertex1, Vertex<T> vertex2, int weight) {
-    this.vertex1 = vertex1;
-    this.vertex2 = vertex2;
+    this(vertex1, vertex2);
     this.weight = weight;
   }
 
@@ -180,9 +179,7 @@ class Edge<T> {
    * @param isDirected
    */
   Edge(Vertex<T> vertex1, Vertex<T> vertex2, int weight, boolean isDirected) {
-    this.vertex1 = vertex1;
-    this.vertex2 = vertex2;
-    this.weight = weight;
+    this(vertex1, vertex2, weight);
     this.isDirected = isDirected;
   }
 

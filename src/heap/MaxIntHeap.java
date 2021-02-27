@@ -130,6 +130,7 @@ public class MaxIntHeap {
         break;
       } else {
         swap(index, largerIndex);
+        index = largerIndex;
       }
     }
   }

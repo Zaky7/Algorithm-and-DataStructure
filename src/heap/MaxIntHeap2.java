@@ -107,6 +107,7 @@ public class MaxIntHeap2 {
         break;
       } else {
         swap(largestIndex, index);
+        index = largestIndex;
       }
     }
   }
