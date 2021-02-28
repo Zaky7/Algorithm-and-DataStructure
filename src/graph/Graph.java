@@ -25,7 +25,8 @@ public class Graph<T> {
     allEdges.add(edge);
     vertex1.addAdjacentVertex(edge, vertex2);
     if (!isDirected) {
-      vertex2.addAdjacentVertex(edge, vertex1);
+      Edge<T> reverseEdge = new Edge<>(vertex2, vertex1, weight, isDirected);
+      vertex2.addAdjacentVertex(reverseEdge, vertex1);
     }
   }
 
@@ -64,12 +65,15 @@ public class Graph<T> {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
+    builder.append("Graph: ");
     for (Map.Entry<Long, Vertex<T>> vertexEntry : allVertexMap.entrySet()) {
       Vertex vertex = vertexEntry.getValue();
       builder
         .append(vertex.toString())
         .append(" --> ")
         .append(vertex.getAdjacentVertexes().toString())
+        .append(" ")
+        .append(vertex.getEdges())
         .append("\n");
     }
     return builder.toString();
@@ -233,17 +237,22 @@ class Edge<T> {
 
   @Override
   public String toString() {
+    //    return (
+    //      "Edge[" +
+    //      "isDirected=" +
+    //      isDirected +
+    //      ", vertex1=" +
+    //      vertex1 +
+    //      ", vertex2=" +
+    //      vertex2 +
+    //      ", string=" + (vertex1 + "->" +vertex2) +
+    //      ", weight=" +
+    //      weight +
+    //      ']'
+    //    );
+
     return (
-      "Edge[" +
-      "isDirected=" +
-      isDirected +
-      ", vertex1=" +
-      vertex1 +
-      ", vertex2=" +
-      vertex2 +
-      ", weight=" +
-      weight +
-      ']'
+      "Edge[" + "" + (vertex1 + "->" + vertex2) + ", weight=" + weight + ']'
     );
   }
 }

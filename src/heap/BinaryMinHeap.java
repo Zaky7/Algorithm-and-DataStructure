@@ -11,7 +11,7 @@ public class BinaryMinHeap<T> {
   private List<Node> items;
   private Map<T, Integer> nodePositionMap;
 
-  BinaryMinHeap() {
+  public BinaryMinHeap() {
     this.items = new ArrayList<>();
     this.nodePositionMap = new HashMap<>();
   }
@@ -52,15 +52,17 @@ public class BinaryMinHeap<T> {
     return items.get(parentIndex(index));
   }
 
-  private void swapAndUpdateMap(int index1, int index2) {
+  private void swapNodes(int index1, int index2) {
     Node<T> node1 = this.items.get(index1);
     Node<T> node2 = this.items.get(index2);
 
     Node temp = node1;
+
+    // update nodes in the heap
     this.items.set(index1, node2);
     this.items.set(index2, temp);
 
-    // Also update the index in map
+    // update nodes in the map
     nodePositionMap.put(node1.getKey(), index2);
     nodePositionMap.put(node2.getKey(), index1);
   }
@@ -71,14 +73,13 @@ public class BinaryMinHeap<T> {
       parent(index).getWeight() > this.items.get(index).getWeight()
     ) {
       int pIndex = parentIndex(index);
-      swapAndUpdateMap(index, pIndex);
+      swapNodes(index, pIndex);
       index = pIndex;
     }
   }
 
   private void heapifyDown() {
     int index = 0;
-
     while (hasLeft(index)) {
       int smallerChildIndex = leftChildIndex(index);
 
@@ -94,7 +95,7 @@ public class BinaryMinHeap<T> {
       ) {
         break;
       } else {
-        swapAndUpdateMap(index, smallerChildIndex);
+        swapNodes(index, smallerChildIndex);
         index = smallerChildIndex;
       }
     }
@@ -104,21 +105,21 @@ public class BinaryMinHeap<T> {
     return items.get(0);
   }
 
-  public Node poll() {
+  public T poll() {
     int first = 0;
-    Node deletedElement = items.get(first);
+    Node<T> deletedElement = items.get(first);
 
     // Swap the first element with last
-    swapAndUpdateMap(first, this.items.size() - 1);
+    swapNodes(first, this.items.size() - 1);
 
-    // remove the last element from heap and Queue
+    // remove the last element from heap and map
     items.remove(this.items.size() - 1);
     nodePositionMap.remove(deletedElement.getKey());
 
-    // Now heapify Down
+    // Now heapify Down to balance again
     heapifyDown();
 
-    return deletedElement;
+    return deletedElement.getKey();
   }
 
   public void add(int weight, T key) {
@@ -147,11 +148,15 @@ public class BinaryMinHeap<T> {
   }
 
   public void printBinaryHeap() {
-    System.out.println();
+    System.out.print("Binary heap: ");
     for (int i = 0; i < items.size(); i++) {
       System.out.print(items.get(i) + " ");
     }
-    System.out.println();
     System.out.println(nodePositionMap.toString());
+    System.out.println();
+  }
+
+  public boolean isEmpty() {
+    return items.isEmpty();
   }
 }

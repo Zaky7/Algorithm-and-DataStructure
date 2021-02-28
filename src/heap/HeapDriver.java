@@ -13,18 +13,18 @@ public class HeapDriver {
     binaryHeap.add(5, "C");
     binaryHeap.add(6, "D");
 
-    binaryHeap.printBinaryHeap();
+    binaryHeap.toString();
 
     System.out.println(binaryHeap.containsKey("C"));
     System.out.println(binaryHeap.containsKey("F"));
 
     binaryHeap.decrease("A", 2);
 
-    binaryHeap.printBinaryHeap();
+    binaryHeap.toString();
 
     binaryHeap.poll();
 
-    binaryHeap.printBinaryHeap();
+    binaryHeap.toString();
   }
 
   private void heapDriver1() {
