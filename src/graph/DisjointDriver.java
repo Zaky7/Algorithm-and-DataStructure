@@ -13,6 +13,7 @@ public class DisjointDriver {
     ds.makeSet(7);
 
     ds.union(1, 2);
+    ds.union(1, 2);
     ds.union(2, 3);
     ds.union(4, 5);
     ds.union(6, 7);

@@ -47,7 +47,43 @@ public class GraphDriver {
     //    Deque<Vertex<Integer>> topSort = ts.topoLogicalSort(graph);
     //    System.out.println(topSort.toString());
 
-    Graph graph = new Graph(false);
+    //    Graph graph = new Graph(false);
+    //
+    //    /**
+    //     * A -->  D  -->  E
+    //     * |   / |    / |
+    //     * | /   |  /   |
+    //     * B --> C -->  F
+    //     */
+    //    Vertex A = new Vertex(1, "A");
+    //    Vertex B = new Vertex(2, "B");
+    //    Vertex C = new Vertex(3, "C");
+    //    Vertex D = new Vertex(4, "D");
+    //    Vertex E = new Vertex(5, "E");
+    //    Vertex F = new Vertex(6, "F");
+    //
+    //    graph.addEdge(A, D, 1);
+    //    graph.addEdge(A, B, 3);
+    //
+    //    graph.addEdge(B, D, 3);
+    //    graph.addEdge(B, C, 1);
+    //
+    //    graph.addEdge(C, D, 1);
+    //    graph.addEdge(C, E, 5);
+    //    graph.addEdge(C, F, 4);
+    //
+    //    graph.addEdge(D, E, 6);
+    //
+    //    graph.addEdge(E, F, 2);
+    //
+    //    System.out.println(graph.toString());
+    //
+    //    PrimMST primMST = new PrimMST();
+    //    List<Edge<Integer>> spanningEdges = primMST.primMST(graph);
+    //
+    //    for (Edge<Integer> edge : spanningEdges) {
+    //      System.out.println(edge.toString());
+    //    }
 
     /**
      * A -->  D  -->  E
@@ -62,27 +98,20 @@ public class GraphDriver {
     Vertex E = new Vertex(5, "E");
     Vertex F = new Vertex(6, "F");
 
+    Graph<Integer> graph = new Graph<>(false);
     graph.addEdge(A, D, 1);
     graph.addEdge(A, B, 3);
-
     graph.addEdge(B, D, 3);
     graph.addEdge(B, C, 1);
-
     graph.addEdge(C, D, 1);
     graph.addEdge(C, E, 5);
     graph.addEdge(C, F, 4);
-
     graph.addEdge(D, E, 6);
-
     graph.addEdge(E, F, 2);
 
-    System.out.println(graph.toString());
-
-    PrimMST primMST = new PrimMST();
-    List<Edge<Integer>> spanningEdges = primMST.primMST(graph);
-
-    for (Edge<Integer> edge : spanningEdges) {
-      System.out.println(edge.toString());
+    KruskalSpanningTree ksp = new KruskalSpanningTree();
+    for (Edge e : ksp.kruskalMST(graph)) {
+      System.out.println(e);
     }
   }
 }

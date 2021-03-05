@@ -39,7 +39,7 @@ public class DisjointSet {
     Node parent1 = findSet(node1);
     Node parent2 = findSet(node2);
 
-    if (node1.data == node2.data) {
+    if (parent1.data == parent2.data) {
       return false;
     }
 
