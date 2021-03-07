@@ -106,6 +106,11 @@ public class BinaryMinHeap<T> {
   }
 
   public T poll() {
+    Node<T> deletedElement = pollNode();
+    return deletedElement.getKey();
+  }
+
+  public Node<T> pollNode() {
     int first = 0;
     Node<T> deletedElement = items.get(first);
 
@@ -119,7 +124,7 @@ public class BinaryMinHeap<T> {
     // Now heapify Down to balance again
     heapifyDown();
 
-    return deletedElement.getKey();
+    return deletedElement;
   }
 
   public void add(int weight, T key) {
