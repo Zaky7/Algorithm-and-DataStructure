@@ -27,5 +27,13 @@ public class DisjointDriver {
     System.out.println(ds.findSet(5));
     System.out.println(ds.findSet(6));
     System.out.println(ds.findSet(7));
+
+    int n = 6;
+    for (int i = 0; i < n; i++) {
+      for (int j = i; j < n; j++) {
+        System.out.print("(" + i + "," + j + ") ");
+      }
+      System.out.println();
+    }
   }
 }
