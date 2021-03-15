@@ -1,9 +1,9 @@
 package graph.dijkstra;
 
-import graph.Edge;
-import graph.Graph;
-import graph.Node;
-import graph.Vertex;
+import graph.helper.Edge;
+import graph.helper.Graph;
+import graph.helper.Node;
+import graph.helper.Vertex;
 import heap.BinaryMinHeap;
 import java.util.HashMap;
 import java.util.Map;

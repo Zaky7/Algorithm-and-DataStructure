@@ -1,5 +1,9 @@
-package graph;
+package graph.kruskalSpanningTree;
 
+import graph.disjointSet.DisjointSet;
+import graph.helper.Edge;
+import graph.helper.Graph;
+import graph.helper.Vertex;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -42,5 +46,36 @@ public class KruskalSpanningTree {
     }
 
     return resultEdge;
+  }
+
+  public static void main(String[] args) {
+    /**
+     * A -->  D  -->  E
+     * |   / |    / |
+     * | /   |  /   |
+     * B --> C -->  F
+     */
+    Vertex A = new Vertex(1, "A");
+    Vertex B = new Vertex(2, "B");
+    Vertex C = new Vertex(3, "C");
+    Vertex D = new Vertex(4, "D");
+    Vertex E = new Vertex(5, "E");
+    Vertex F = new Vertex(6, "F");
+
+    Graph<Integer> graph = new Graph<>(false);
+    graph.addEdge(A, D, 1);
+    graph.addEdge(A, B, 3);
+    graph.addEdge(B, D, 3);
+    graph.addEdge(B, C, 1);
+    graph.addEdge(C, D, 1);
+    graph.addEdge(C, E, 5);
+    graph.addEdge(C, F, 4);
+    graph.addEdge(D, E, 6);
+    graph.addEdge(E, F, 2);
+
+    KruskalSpanningTree ksp = new KruskalSpanningTree();
+    for (Edge e : ksp.kruskalMST(graph)) {
+      System.out.println(e);
+    }
   }
 }

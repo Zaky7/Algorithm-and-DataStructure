@@ -1,4 +1,4 @@
-package graph;
+package graph.helper;
 
 import java.util.Objects;
 

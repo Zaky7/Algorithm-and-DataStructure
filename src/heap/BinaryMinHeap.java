@@ -1,6 +1,6 @@
 package heap;
 
-import graph.Node;
+import graph.helper.Node;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

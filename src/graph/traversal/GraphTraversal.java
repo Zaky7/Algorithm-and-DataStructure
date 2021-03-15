@@ -1,5 +1,7 @@
-package graph;
+package graph.traversal;
 
+import graph.helper.Graph;
+import graph.helper.Vertex;
 import java.util.*;
 
 public class GraphTraversal<T> {

@@ -1,4 +1,4 @@
-package graph;
+package graph.disjointSet;
 
 public class DisjointDriver {
 

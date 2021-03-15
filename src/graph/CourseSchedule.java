@@ -1,8 +1,6 @@
 package graph;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 public class CourseSchedule {
 

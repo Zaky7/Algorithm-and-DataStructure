@@ -1,4 +1,4 @@
-package graph;
+package graph.helper;
 
 import java.util.*;
 
@@ -27,6 +27,9 @@ public class Graph<T> {
     if (!isDirected) {
       Edge<T> reverseEdge = new Edge<>(vertex2, vertex1, weight, isDirected);
       vertex2.addAdjacentVertex(reverseEdge, vertex1);
+
+      // TODO remove it or fix issue if previous algo break
+      allEdges.add(reverseEdge);
     }
   }
 
@@ -79,4 +82,3 @@ public class Graph<T> {
     return builder.toString();
   }
 }
-
