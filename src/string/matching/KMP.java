@@ -1,28 +1,26 @@
-package string;
-
-import java.util.Arrays;
+package string.matching;
 
 public class KMP {
 
   public int[] createLPSArray(String pattern) {
     int patternLen = pattern.length();
 
-    int len = 0;
+    int j = 0;
     int i = 1;
     int[] LPS = new int[patternLen];
 
     while (i < patternLen) {
-      if (pattern.charAt(len) == pattern.charAt(i)) {
-        len++;
-        LPS[i] = len;
+      if (pattern.charAt(j) == pattern.charAt(i)) {
+        j++;
+        LPS[i] = j;
         i++;
       } else {
         // skip the jth character
-        if (len == 0) {
-          LPS[i] = len;
+        if (j == 0) {
+          LPS[i] = j;
           i++;
         } else {
-          len = LPS[len - 1];
+          j = LPS[j - 1];
         }
       }
     }
@@ -34,10 +32,9 @@ public class KMP {
     int[] LPS = createLPSArray(pattern);
     int i = 0;
     int j = 0;
-    int matchedChars = 0;
     int searchIndex = -1;
 
-    while (i < baseStr.length()) {
+    while (i < baseStr.length() && j < pattern.length()) {
       if (baseStr.charAt(i) == pattern.charAt(j)) {
         i++;
         j++;
@@ -49,21 +46,18 @@ public class KMP {
           j = LPS[j - 1];
         }
       }
+    }
 
-      if (j == pattern.length()) {
-        if (searchIndex == -1) {
-          searchIndex = i - j;
-        }
-        break;
-      }
+    if (j == pattern.length()) {
+      searchIndex = i - j;
     }
 
     return searchIndex;
   }
 
   public static void main(String[] args) {
-    String baseStr = "abxabcabxabcabcaby";
-    String pattern = "bd";
+    String baseStr = "time";
+    String pattern = "me";
     KMP kmp = new KMP();
     int searchIndex = kmp.search(baseStr, pattern);
 
