@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/Zaky7/Algorithm-and-DataStructure#readme",
   "devDependencies": {
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.2.1",
     "prettier-plugin-java": "^1.0.1"
   },
